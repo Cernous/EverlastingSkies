@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+        <title>Login</title>
+    </head>
+    <body>
+        <style>
+            body {
+                margin:0
+            }
+            .main-content {
+                position:absolute;
+                background-image: radial-gradient(white, skyblue);
+                width:100%;
+                height:100%;
+                margin: 0;
+            }
+
+            .card {
+                background-color: rgba(0,0,0,0.5);
+                height:auto;
+                margin:auto;
+                margin-bottom: auto;
+                max-width: 450px;
+                margin-top: 75px;
+                border-radius: 10%;
+                padding:15px;
+                color: whitesmoke;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                display: flexbox;
+            }
+
+            .form {
+                padding:60px;
+                padding-top: 30px;
+                align-items: center;
+                justify-content: center;
+                display: block;
+                text-align: left;
+            }
+
+            #login_options{
+                margin-top: 20px;
+                width: 100%;
+                display: flex;
+            }
+
+            #login_buttons {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                margin-bottom: 15px;
+            }
+
+            #login-card {
+                display:block;
+                position: sticky;
+            }
+
+            #register-card {
+                display:block;
+                position:sticky;
+            }
+
+            #register-button {
+                background-color: rgba(0,0,0,0);
+                color: white;
+            }
+        </style>
+
+        <div class="main-content">
+            <div class="card" id="login-card">
+                <h1>Account</h1>
+                <div class="form">
+                    <p>Username:</p>
+                    <input type="text">
+                    <p>Password:</p>
+                    <input type="password">
+                    <div id="login_options">
+                        <input type="checkbox" id="saveID" style="margin-top: -3px;">
+                        <label for="saveID" id="save">Save Username</label>
+                    </div>
+                </div>
+                <div id="login_buttons">
+                    <button id="login-button">Login</button>
+                    <button id="register-button" onclick="onClickRegister()">Register ></button>
+                </div>
+            </div>
+            <div class="card" id="register-card">
+                <h1>Register</h1>
+                <div class="form">
+                    <p>Username:</p>
+                    <input type="text">
+                    <p>Email:</p>
+                    <input type="email">
+                    <p>Password:</p>
+                    <input type="password">
+                    <p>Confirm Password:</p>
+                    <input type="password">
+                </div>
+            </div>
+            <script>
+                const registerCard = document.getElementById("register-card");
+                const loginCard = document.getElementById("login-card");
+                function fadeOut(element){
+                    var opacity = 1;
+                    element.style.opacity = opacity;
+                    var timer = setInterval(function() {
+                        if (opacity <= 0) {
+                            // element.style.display="none";
+                            clearInterval(timer);
+                        }
+                        element.style.opacity = opacity;
+                        element.style.filter = "alpha(opacity="+opacity*100+")";
+                        opacity-=opacity*0.1;
+                    }, 100)
+                }
+
+                function fadeIn(element){
+                    var opacity = 0.1;
+                    element.style.opacity = opacity;
+                    element.style.display="flexbox"
+                    var timer = setInterval(function() {
+                        if (opacity >=1) {
+                            clearInterval(timer);
+                        }
+                        element.style.opacity = opacity;
+                        element.style.filter = "alpha(opacity="+opacity*100+")";
+                        opacity+=opacity*0.1;
+                    }, 100)
+                }
+
+                function onClickRegister(){
+                    setTimeout(fadeIn(registerCard),5000);
+                    fadeOut(loginCard);   
+                }
+            </script>
+        </div>
+        
+
+    </body>
+</html>

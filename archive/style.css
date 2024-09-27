@@ -1,0 +1,180 @@
+:root {
+    --accent: rgb(235, 188, 135);
+    --subaccent: rgb(230, 203, 173);
+    --background: rgb(241,241,241);
+    --border-color:rgb(216,216,216);
+    --inactive-color: grey;
+    --font-family: 'Arial';
+}
+
+.grid-container {
+    display: grid;
+    height: auto;
+    align-content: center;
+    grid-template-columns: auto auto auto auto;
+    background-color: black;
+    gap: 2px;
+    padding:2px;
+}
+
+.grid-container > div {
+    text-align: center;
+    background-color: rgb(59, 59, 59);
+}
+
+body {
+    font-family: var(--font-family);
+}
+
+input {
+    width: 95%;
+    padding:5px;
+    box-sizing: border-box;
+    border: 2px solid var(--border-color);
+    border-radius: 7px;
+    font-family: var(--font-family);
+}
+input[type=file],
+button {
+    width: 95%;
+    padding: 5px;
+    border: 2px solid var(--border-color);
+    background-color: var(--background);
+    border-radius: 7px;
+    font-family: var(--font-family);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+input[type=file]:disabled,
+button:disabled {
+    background-color:var(--inactive-color);
+    border-color: var(--inactive-color);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+input[type=file]:hover,
+button:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    padding: 7px;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+input[type=file]:active,
+button:active{
+    background-color: var(--subaccent);
+    border-color: var(--subaccent);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}   
+
+input[type=email],
+input[type=search],
+input[type=text],
+input[type=password],
+input[type=number] {
+    background-color: var(--background);
+    border-color:var(--border-color);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+input[type=email]:hover,
+input[type=search]:hover,
+input[type=text]:hover,
+input[type=password]:hover,
+input[type=number]:hover {
+    border-color:var(--accent);
+    padding:7px;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+input[type=email]:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus {
+    border-color:var(--accent);
+    padding:7px;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+input[type=email]:active,
+input[type=search]:active,
+input[type=text]:active,
+input[type=password]:active,
+input[type=number]:active {
+    border-color:var(--accent);
+    padding:7px;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+input[type=file]::-webkit-file-upload-button {
+    display: none;
+}
+
+input[type=range] {
+    appearance: none;
+    background-color: rgba(0,0,0,0);
+    background-image: linear-gradient(to right,var(--subaccent),var(--background));
+    height:1px;
+    margin-top: 10px;
+    border-width: 0px;
+    border: none;
+}
+
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: var(--accent);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+input[type=range]::-webkit-slider-thumb:hover{
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 30%;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+input[type=radio],
+input[type=checkbox]{
+    appearance: none;
+    background-color: rgba(0,0,0,0);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+input[type=radio]:hover,
+input[type=checkbox]:hover{
+    border-color: var(--accent);
+    height: 25px;
+    width: 25px;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+input[type=radio]:checked,
+input[type=checkbox]:checked{
+    background-color: var(--accent);
+    border-color: var(--accent);
+    height: 25px;
+    width: 25px;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+input[type=checkbox]:checked,
+input[type=checkbox]:hover {
+    border-radius: 30%;
+}
